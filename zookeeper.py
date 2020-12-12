@@ -120,18 +120,18 @@ Switching on the camera in the rabbit habitat...
 It looks like we will soon have more rabbits!"""
 
 
-animals = [camel, lion, deer, goose, bat, rabbit]
-
-# write your code here
+# Create a list of the animals to iterate through later
 habitats = list([camel, lion, deer, goose, bat, rabbit])
 
 while True:
 
-    user_input = input(r"Please enter the number of the habitat you would like to view or exit to leave: ")
+    user_input = input(f"\nPlease enter the number (0 - 5) of the habitat you would like to view or exit to leave: ")
 
-    if user_input != 'exit':
-        print(habitats[int(user_input)])
-
-    else:
-        print('See you later!')
+    # If the user is ready to exit
+    if user_input == 'exit' or int(user_input) >= len(habitats):
+        print(f'\nSee you later!')
         break
+
+    # If the user wants to continue with the program and enters a valid index number
+    else:
+        print(habitats[int(user_input)])
